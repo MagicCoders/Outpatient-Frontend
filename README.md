@@ -1,2 +1,2 @@
 # Outpatient-Frontend
-Frontend Web App for the oiutpatient records management system.
+Frontend Web App for the outpatient records management system.
