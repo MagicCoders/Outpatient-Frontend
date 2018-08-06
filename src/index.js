@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-//import App from './App';
-import Login from  './Login';
+import Login from './Login';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<Login/>, document.getElementById('root'));

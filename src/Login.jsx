@@ -1,4 +1,11 @@
 import React, {Component} from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router,
+    Route,
+    Link,
+    Redirect,
+    withRouter
+} from "react-router-dom";
 import {Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./Login.css";
 
@@ -6,13 +13,13 @@ export default class Login extends  Component {
     constructor(props) {
         super(props);
         this.state = {
-            username:"",
+            userid:"",
             password:""
         };
     }
 
     validateForm(){
-        return this.state.username.length > 0 && this.state.password.length > 0;
+        return this.state.userid.length > 0 && this.state.password.length > 0;
     }
 
     handleChange = event => {
@@ -22,6 +29,7 @@ export default class Login extends  Component {
     };
 
     handleSubmit = event => {
+
         event.preventDefault();
     };
 
@@ -30,15 +38,15 @@ export default class Login extends  Component {
             <div className="Login">
                 <header className= "Login-header">USER LOGIN</header>
                 <p className= "Login-intro">
-                    Submit Details Below:
+                    Submit your details below to start a new session:
                 </p>
                 <form onSubmit={this.handleSubmit}>
-                    <FormGroup controlId="username" bsSize="large">
-                        <ControlLabel>Username (email):</ControlLabel>
+                    <FormGroup controlId="userid" bsSize="large">
+                        <ControlLabel>User ID: </ControlLabel>
                         <FormControl
                             autoFocus
-                            type="email"
-                            value={this.state.username}
+                            type="id"
+                            value={this.state.userid}
                             onChange={this.handleChange}
                         />
                     </FormGroup>
@@ -56,11 +64,10 @@ export default class Login extends  Component {
                         disabled={!this.validateForm()}
                         type="submit"
                     >
-                        Login
+                        LOGIN
                     </Button>
                 </form>
-                <p className="Login-footer"> Copyright &copy; 2018 <br/>
-                    Egerton University Sanatorium
+                <p className="Login-footer">Magic Coders &copy; | 2018
                 </p>
             </div>
         );
